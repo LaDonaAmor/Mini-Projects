@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(20, 138, 255);
+  color: white;
+}
+
+#calculator {
+  max-width: 25rem;
+  width: 100%;
+  margin: auto;
+}
+
+.display {
+  width: 100%;
+  display: block;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  background-color: rgb(171, 174, 174);
+  text-align: right;
+  font-size: 1.6rem;
+}
+
+.buttons {
+  display: grid;
+  width: 100%;
+  justify-items: stretch;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  border: none;
+  color: gray;
+  margin: auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.clear_entry,
+.clear,
+.delete,
+.percent,
+.operator,
+.equal,
+.numbers {
+  width: 100%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  border: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+
+/*Responsiveness*/
