@@ -18,28 +18,70 @@ const equalButton = document.querySelector(".equal");
 const decimalButton = document.querySelector(".decimal");
 const percentButton = document.querySelector(".percent");
 
+const MAX_DIGITS = 15;
+
 let currentValue = "";
 let storedValue = "";
 let currentOperator = "";
 
-function updateDisplay() {
-  if (currentValue) {
-    displayInput.value = currentValue.toString();
-  } else if (storedValue) {
-    displayInput.value = storedValue.toString();
-  } else {
-    displayInput.value = "";
+function formatNumber(value) {
+  if (value === "Error") return "Error";
+  if (value === null || value === undefined || value === "") return "";
+
+  if (typeof value === "string") {
+    if (value.endsWith(".")) return value;
+    if (value.startsWith(".")) return value;
   }
 
-  if (displayInput.value === "Error") {
+  const num = Number(value);
+  if (Number.isNaN(num)) return "";
+
+  const precisionLimit = MAX_DIGITS + 1;
+  let formatted = num.toPrecision(precisionLimit);
+  formatted = formatted.replace(/\.?0+$/, "");
+
+  if (formatted.length > MAX_DIGITS) {
+    return num.toExponential(MAX_DIGITS - 6);
+  }
+  return formatted;
+}
+
+function updateDisplay() {
+  let displayString = "";
+
+  if (currentValue) {
+    displayString =
+      typeof currentValue === "string"
+        ? currentValue
+        : formatNumber(currentValue);
+
+    if (storedValue && currentOperator) {
+      displayString =
+        formatNumber(storedValue) + "" + currentOperator + "" + displayString;
+    }
+  } else if (storedValue) {
+    displayString = formatNumber(storedValue);
+
+    if (currentOperator) {
+      displayString += "" + currentOperator;
+    }
+  }
+
+  displayInput.value = displayString;
+
+  if (displayInput.value.includes("Error")) {
     displayInput.style.color = "red";
   } else {
-    displayInput.style.color = "black";
+    displayInput.style.color = "white";
   }
+  displayInput.blur();
 }
 
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    if (currentValue.length >= MAX_DIGITS) {
+      return alert("Can't enter more that 15 digits");
+    }
     currentValue += button.textContent;
     updateDisplay();
   });
@@ -50,6 +92,9 @@ decimalButton.addEventListener("click", () => {
     currentValue = "0.";
     updateDisplay();
   } else if (!currentValue.includes(".")) {
+    if (currentValue.length >= MAX_DIGITS) {
+      return alert("Can't enter more that 15 digits");
+    }
     currentValue += ".";
     updateDisplay();
   }
@@ -92,6 +137,11 @@ deleteButton.addEventListener("click", () => {
 });
 
 percentButton.addEventListener("click", () => {
+  if (!currentValue && storedValue) {
+    currentValue = storedValue;
+    storedValue = "";
+    currentOperator = "";
+  }
   currentValue = Number(currentValue);
   if (!storedValue) {
     currentValue = currentValue / 100;
@@ -152,4 +202,36 @@ equalButton.addEventListener("click", () => {
     currentOperator = "";
     updateDisplay();
   }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key >= "0" && e.key <= "9") {
+    currentValue += e.key;
+    updateDisplay();
+  } else if (["+", "-", "*", "/"].includes(e.key)) {
+    let opMap = { "*": "×", "/": "÷" }; // Map keyboard to symbols
+    let operator = opMap[e.key] || e.key;
+    if (storedValue === "") {
+      storedValue = currentValue;
+      currentValue = "";
+    } else if (currentValue !== "") {
+      storedValue = calculate();
+      currentValue = "";
+    }
+    currentOperator = operator;
+    updateDisplay();
+  } else if (e.key === "Enter") {
+    equalButton.click();
+  } else if (e.key === "Backspace") {
+    deleteButton.click();
+  } else if (e.key === "Escape") {
+    clearButton.click();
+  } else if (e.key === ".") {
+    decimalButton.click();
+  } else if (e.key === "%") {
+    percentButton.click();
+  } else if (e.key === "c") {
+    clearButton.click();
+  }
+  e.preventDefault();
 });
