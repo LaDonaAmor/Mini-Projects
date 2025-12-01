@@ -235,3 +235,37 @@ document.addEventListener("keydown", (e) => {
   }
   e.preventDefault();
 });
+
+// Robust: blur calculator focusables when clicking/tapping outside the calculator
+(function installOutsideBlur() {
+  const calculatorEl = document.querySelector("#calculator");
+  if (!calculatorEl) return;
+
+  // Make body focusable so we can move focus away as a fallback
+  try {
+    if (!document.body.hasAttribute("tabindex")) document.body.setAttribute("tabindex", "-1");
+  } catch (err) {}
+
+  function blurInside() {
+    const focusables = calculatorEl.querySelectorAll("input, button, [tabindex]");
+    focusables.forEach((el) => {
+      try { el.blur(); } catch (err) {}
+    });
+    // As a fallback, focus the body so nothing inside stays focused
+    try { document.body.focus(); } catch (err) {}
+  }
+
+  // pointerdown fires before focus/active changes on most devices
+  document.addEventListener("pointerdown", (ev) => {
+    if (!calculatorEl.contains(ev.target)) {
+      blurInside();
+    }
+  });
+
+  // also handle touchstart for older browsers/devices
+  document.addEventListener("touchstart", (ev) => {
+    if (!calculatorEl.contains(ev.target)) {
+      blurInside();
+    }
+  }, { passive: true });
+})();
