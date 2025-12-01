@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Orbitron:wght@400..900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,37 +12,63 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(20, 138, 255);
+  background-image: linear-gradient(140deg, #536878, #36454f);
   color: white;
 }
 
+.display:focus,
+.clear_entry:focus,
+.clear:focus,
+.delete:focus,
+.decimal:focus,
+.percent:focus,
+.operator:focus,
+.equal:focus,
+.numbers:focus {
+  outline: none;
+  border: none;
+}
+
 #calculator {
-  max-width: 25rem;
+  max-width: 22rem;
   width: 100%;
   margin: auto;
+  padding: 1.8rem;
+  background-color: #333940;
+  background-image: linear-gradient(140deg, #585d7a, #303344);
+  border-radius: 2.5rem;
+  box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+    0 0.4rem 1.3rem 0 rgba(0, 0, 0, 0.19);
 }
 
 .display {
   width: 100%;
-  display: block;
+  display: flex;
   min-height: 100%;
   box-sizing: border-box;
-  padding: 1rem;
+  box-shadow: inset 0.3rem 0.3rem 0.6rem #5c6269,
+    inset -0.3rem -0.3rem 0.6rem #5c6269;
+  border-width: 0.4rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   margin-bottom: 0.8rem;
   background-color: rgb(171, 174, 174);
+  background-image: linear-gradient(140deg, #4c5154, #101513);
   text-align: right;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+  font-family: "Fira Code", monospace;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+     0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .buttons {
   display: grid;
   width: 100%;
-  justify-items: stretch;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  gap: 0.6rem;
   border: none;
   color: gray;
-  margin: auto;
+  margin: 0;
   text-align: center;
   text-decoration: none;
 }
@@ -48,12 +76,13 @@ body {
 .clear_entry,
 .clear,
 .delete,
+.decimal,
 .percent,
 .operator,
 .equal,
 .numbers {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.1rem;
   box-sizing: border-box;
   border: none;
   background-color: white;
@@ -61,6 +90,13 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 1.5rem;
+  font-weight: 600;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fira Code", monospace;
 }
 
 
