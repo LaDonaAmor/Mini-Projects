@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="clock-container">
+        <button data-label="toggle dark and light mode" id="toggle-btn" class="toggle">
+        Dark Mode
+    </button>
+                    <div class="clock-ring">
+
+        <div class="clock">
+                <div class="ticks">
+                    <div class="needles">
+                        <div id="hour" class="needle hour"></div>
+                        <div id="minute" class="needle minute"></div>
+                        <div id="second" class="needle second"></div>
+                        <div class="center-point"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="current-time" class="time"></p>
+        <p id="current-date" class="date"></p>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
