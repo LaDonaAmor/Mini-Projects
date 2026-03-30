@@ -12,8 +12,34 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(140deg, #536878, #36454f);
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(38, 36, 36, 0.5)),
+    url("./img/wood.jpg");
+  background-size: cover;
   color: white;
+}
+
+#back-btn {
+  position: absolute;
+  top: 3rem;
+  left: 43rem;
+}
+
+.back {
+  width: 100%;
+  padding: 0.4rem;
+  border: none;
+  background-color: #d7742c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10%;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0.2rem 0.2rem 0.3rem #201e1e,
+    -0.2rem -0.2rem 0.3rem #363838;
 }
 
 #calculator {
@@ -25,7 +51,8 @@ body {
   background-color: #333940;
   background-image: linear-gradient(140deg, #585d7a, #303344);
   border-radius: 2.5rem;
-  box-shadow: 0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2),
+  box-shadow:
+    0 0.3rem 0.5rem 0 rgba(0, 0, 0, 0.2),
     0 0.4rem 1.3rem 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -34,7 +61,8 @@ body {
   display: flex;
   min-height: 100%;
   box-sizing: border-box;
-  box-shadow: inset 0.3rem 0.3rem 0.6rem #5c6269,
+  box-shadow:
+    inset 0.3rem 0.3rem 0.6rem #5c6269,
     inset -0.3rem -0.3rem 0.6rem #5c6269;
   border-width: 0.4rem;
   border-radius: 0.5rem;
@@ -45,7 +73,8 @@ body {
   text-align: right;
   font-size: 1.5rem;
   font-family: "Fira Code", monospace;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.4),
     0 0 10px rgba(255, 255, 255, 0.2);
 }
 
@@ -85,7 +114,9 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Fira Code", monospace;
-  box-shadow: 0.2rem 0.2rem 0.3rem #0f0e0e, -0.2rem -0.2rem 0.3rem #232424;
+  box-shadow:
+    0.2rem 0.2rem 0.3rem #0f0e0e,
+    -0.2rem -0.2rem 0.3rem #232424;
 }
 
 .clear_entry,
