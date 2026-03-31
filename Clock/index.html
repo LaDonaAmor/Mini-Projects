@@ -9,27 +9,35 @@
 </head>
 
 <body>
+    <main class="clock-app">
 
-    <div class="clock-container">
-        <button data-label="toggle dark and light mode" id="toggle-btn" class="toggle">
-        Dark Mode
-    </button>
-                    <div class="clock-ring">
-
-        <div class="clock">
-                <div class="ticks">
-                    <div class="needles">
-                        <div id="hour" class="needle hour"></div>
-                        <div id="minute" class="needle minute"></div>
-                        <div id="second" class="needle second"></div>
-                        <div class="center-point"></div>
-                    </div>
-                </div>
-            </div>
+        <div id="back-btn">
+            <a href="/index.html" title="Back to Project Hub"><button class="back" type="button"> Back to Project
+                    Hub</button></a>
         </div>
-        <p id="current-time" class="time"></p>
-        <p id="current-date" class="date"></p>
-    </div>
+
+        <section class="clock-card">
+
+            <!--Theme Toggle-->
+            <button id="toggle-btn" class="theme-toggle">🌙</button>
+
+            <!--Analog Info-->
+            <div class="clock">
+                <div class="markers"></div>
+                <div id="hour" class="needle hour"></div>
+                <div id="minute" class="needle minute"></div>
+                <div id="second" class="needle second"></div>
+                <div class="center-dot"></div>
+            </div>
+
+            <!--Digital Info-->
+            <div class="info">
+                <p id="current-time" class="time"></p>
+                <p id="current-date" class="date"></p>
+            </div>
+        </section>
+    </main>
+
     <script src="js.js"></script>
 </body>
 
