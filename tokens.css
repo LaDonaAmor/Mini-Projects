@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400&display=swap");
+
+/* Box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Zero margins and paddings for clean control */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --color-surface: #fcf9f8;
+  --color-surface-dim: #dcd9d9;
+  --color-surface-bright: #fcf9f8;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f3f2;
+  --color-surface-container: #f0eded;
+  --color-surface-container-high: #eae7e7;
+  --color-surface-container-highest: #e5e2e1;
+  --color-on-surface: #1b1b1b;
+  --color-on-surface-variant: #56423c;
+  --color-inverse-surface: #313030;
+  --color-inverse-on-surface: #f3f0ef;
+  --color-outline: #8a726b;
+  --color-outline-variant: #ddc0b8;
+  --color-surface-tint: #9f4021;
+  --color-primary: #9c3e1f;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #bc5634;
+  --color-on-primary-container: #fffbff;
+  --color-inverse-primary: #ffb59e;
+  --color-secondary: #835418;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fdbd77;
+  --color-on-secondary-container: #784a0d;
+  --color-tertiary: #51613f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #6a7a56;
+  --color-on-tertiary-container: #f9ffeb;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #ffdbd0;
+  --color-primary-fixed-dim: #ffb59e;
+  --color-on-primary-fixed: #3a0b00;
+  --color-on-primary-fixed-variant: #802a0b;
+  --color-secondary-fixed: #ffdcbb;
+  --color-secondary-fixed-dim: #faba75;
+  --color-on-secondary-fixed: #2b1700;
+  --color-on-secondary-fixed-variant: #673d00;
+  --color-tertiary-fixed: #d7e9bd;
+  --color-tertiary-fixed-dim: #bbcda3;
+  --color-on-tertiary-fixed: #121f05;
+  --color-on-tertiary-fixed-variant: #3d4b2b;
+  --color-background: #fcf9f8;
+  --color-on-background: #1b1b1b;
+  --color-surface-variant: #e5e2e1;
+
+  /* Typography */
+
+  /* Heading */
+  --font-family-heading: "Bricolage Grotesque", sans-serif;
+
+  --font-headline-xl-size: 4rem;
+  --font-headline-xl-weight: 800;
+  --font-headline-xl-line-height: 1.1;
+  --font-headline-xl-letter-spacing: -0.02em;
+
+  --font-headline-lg-size: 2.5rem;
+  --font-headline-lg-weight: 800;
+  --font-headline-lg-line-height: 1.2;
+
+  --font-headline-lg-mobile-size: 2rem;
+  --font-headline-lg-mobile-weight: 800;
+  --font-headline-lg-mobile-line-height: 1.2;
+
+  /* Body */
+  --font-family-body: "Work Sans", sans-serif;
+
+  --font-body-lg-size: 1.25rem;
+  --font-body-lg-weight: 400;
+  --font-body-lg-line-height: 1.6;
+
+  --font-body-md-size: 1rem;
+  --font-body-md-weight: 400;
+  --font-body-md-line-height: 1.6;
+
+  /* Label */
+  --font-family-label: "Space Mono", monospace;
+
+  --font-label-md-size: 0.875rem;
+  --font-label-md-weight: 700;
+  --font-label-md-line-height: 1.4;
+
+  --font-label-sm-size: 0.75rem;
+  --font-label-sm-weight: 400;
+  --font-label-sm-line-height: 1.4;
+
+  /* Spacing */
+  --spacing-unit: 0.25rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-margin-desktop: 3rem;
+
+  /* Structural constants */
+  --border-width: 0.1875rem;
+  --shadow-offset: 0.375rem;
+}
+
+/* Base Body Styling */
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-family-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Prevent images from blowing out their containers */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Strip button defaults */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+/* Default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------
+   THE TYPOGRAPHY SYSTEM (Utility Classes)
+   ---------------------------------------------------- */
+
+/* --- HEADLINE XL ---
+   Use for: The main page titles (like "My Project Hub")
+*/
+.type-headline-xl {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-headline-xl-size);
+  font-weight: var(--font-headline-xl-weight);
+  line-height: var(--font-headline-xl-line-height);
+  letter-spacing: var(--font-headline-xl-letter-spacing);
+}
+
+/* --- HEADLINE LG ---
+   Use for: Main section headers (like "Select a Game")
+*/
+.type-headline-lg {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-headline-lg-size);
+  font-weight: var(--font-headline-lg-weight);
+  line-height: var(--font-headline-lg-line-height);
+}
+
+/* --- BODY LG ---
+   Use for: Large intro text, featured paragraphs
+*/
+.type-body-lg {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-lg-size);
+  font-weight: var(--font-body-lg-weight);
+  line-height: var(--font-body-lg-line-height);
+}
+
+/* --- BODY MD ---
+   Use for: Standard reading text, card descriptions, instructions
+*/
+.type-body-md {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-md-size);
+  font-weight: var(--font-body-md-weight);
+  line-height: var(--font-body-md-line-height);
+}
+
+/* --- LABEL MD (Monospace) ---
+   Use for: Buttons, links, navigation, status pills, or stats
+*/
+.type-label-md {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-md-size);
+  font-weight: var(--font-label-md-weight);
+  line-height: var(--font-label-md-line-height);
+}
+
+/* --- LABEL SM (Monospace) ---
+   Use for: Small metadata, tooltips, timestamps, or system logs
+*/
+.type-label-sm {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: var(--font-label-sm-weight);
+  line-height: var(--font-label-sm-line-height);
+}
+
+/* ----------------------------------------------------
+   MOBILE RESPONSIVENESS (Media Queries)
+   ---------------------------------------------------- */
+@media (max-width: 600px) {
+  /* Scale down the massive desktop title to fit mobile screens comfortably */
+  .type-headline-xl {
+    font-size: var(--font-headline-lg-mobile-size);
+    line-height: var(--font-headline-lg-mobile-line-height);
+  }
+
+  /* Scale down large headings slightly on mobile */
+  .type-headline-lg {
+    font-size: var(--font-headline-lg-mobile-size);
+    line-height: var(--font-headline-lg-mobile-line-height);
+  }
+}
