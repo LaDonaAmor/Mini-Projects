@@ -103,10 +103,91 @@
   display: none !important;
 }
 
+.welcome-badge {
+  display: inline-block;
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+  border: calc(var(--border-width) - 1px) solid var(--color-on-background);
+  margin-bottom: 1.5rem;
+  transform: rotate(-4deg);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* --- SEARCH SECTION --- */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.search-label {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-md-size);
+  color: var(--color-on-background);
+  background-color: var(--color-surface-container-lowest);
+  border: var(--border-width) solid var(--color-on-background);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px
+    var(--color-on-background);
+  outline: none;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.25rem;
+  pointer-events: none;
+}
+
+/* --- THE FOCUS/"CLICKED IN" STATE --- */
+#search-input:focus {
+  transform: translate(2px, 2px);
+  box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px)
+    0px 0px var(--color-on-background);
+  background-color: var(
+    --color-surface-container-low
+  ); /* Subtle cream/grey tint */
+  border-color: var(--color-primary);
+}
+
+#search-input::placeholder {
+  color: var(--color-surface-dim);
+  font-style: italic;
+  opacity: 0.8;
+}
+
 /* CONTAINER */
 /* --- THE HOMEPAGE CONTAINER --- */
 .container {
-  max-width: 100%;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--spacing-margin-desktop);
@@ -139,7 +220,7 @@
 /* --- THE GRID SYSTEM --- */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--spacing-gutter);
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -147,6 +228,9 @@
 
 /* --- THE CARD CONTAINER --- */
 .project-card {
+  max-width: 380px;
+  width: 100%;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
