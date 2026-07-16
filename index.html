@@ -8,8 +8,10 @@
 
   <link rel="stylesheet" href="/tokens.css" />
   <link rel="stylesheet" href="/style.css" />
+  <link rel="preload" href="/partials/header.html" as="fetch" crossorigin>
 
   <script src="/partials/include.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body data-nav="hub">
@@ -23,56 +25,14 @@
       some fun!
     </p>
 
-    <div class="project-grid">
-      <a href="calculator/index.html" class="project-card">
-        <div class="project-icon">🧮</div>
-        <div class="card-title">Calculator</div>
-        <div class="project-desc">Crunch numbers with ease!</div>
-      </a>
-      <a href="clock/index.html" class="project-card">
-        <div class="project-icon">🕛</div>
-        <div class="card-title">Clock</div>
-        <div class="project-desc">
-          A stylish, interactive digital clock showing real-time hours,
-          minutes, and seconds.
-        </div>
-      </a>
-      <a href="timer/index.html" class="project-card">
-        <div class="project-icon">⏱️</div>
-        <div class="card-title">Timer</div>
-        <div class="project-desc">Set countdowns for anything!</div>
-      </a>
-      <a href="todo-list/index.html" class="project-card">
-        <div class="project-icon">📝</div>
-        <div class="card-title">To-Do List</div>
-        <div class="project-desc">Organize your tasks playfully.</div>
-      </a>
-      <a href="quote.html" class="project-card">
-        <div class="project-icon">💭</div>
-        <div class="card-title">Quote Generator</div>
-        <div class="project-desc">Get inspired with random quotes.</div>
-      </a>
-      <a href="weather.html" class="project-card">
-        <div class="project-icon">🌤️</div>
-        <div class="card-title">Weather App</div>
-        <div class="project-desc">Check the forecast in style.</div>
-      </a>
-      <a href="guess-the-number/index.html" class="project-card">
-        <div class="project-icon">❓</div>
-        <div class="card-title">Guess the Number Game</div>
-        <div class="project-desc">
-          We'll tell you if your guess was too high or too low!
-        </div>
-      </a>
-      <a href="rock-paper-scissors/index.html" class="project-card">
-        <div class="project-icon">✊✋✌️</div>
-        <div class="card-title">Rock, Paper, Scissors Game</div>
-        <div class="project-desc">
-          Challenge the computer in this classic hand game and see if luck is
-          on your side!
-        </div>
-      </a>
+    <div class="search-section">
+      <input type="text" id="search-input" placeholder="Type to search..." />
     </div>
+
+    <div class="project-grid" id="project-grid-container">
+      <!-- JavaScript will inject cards here automatically -->
+    </div>
+
   </div>
   <div id="footer-container"></div>
 </body>

@@ -102,3 +102,195 @@
 .hidden {
   display: none !important;
 }
+
+/* CONTAINER */
+/* --- THE HOMEPAGE CONTAINER --- */
+.container {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-margin-desktop);
+  padding-right: var(--spacing-margin-desktop);
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+/* Hero Heading and Welcome Block */
+.container h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-headline-xl-size);
+  font-weight: var(--font-headline-xl-weight);
+  line-height: var(--font-headline-xl-line-height);
+  letter-spacing: var(--font-headline-xl-letter-spacing);
+  color: var(--color-on-background);
+  margin-bottom: 1.5rem;
+}
+
+.container p {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-lg-size);
+  font-weight: var(--font-body-lg-weight);
+  line-height: var(--font-body-lg-line-height);
+  color: var(--color-on-surface-variant);
+  max-width: 680px;
+  margin-bottom: 3rem;
+}
+
+/* --- THE GRID SYSTEM --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-gutter);
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* --- THE CARD CONTAINER --- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background-color: var(--color-surface-container-lowest);
+  border: var(--border-width) solid var(--color-on-background);
+  padding: 1.5rem;
+  position: relative;
+
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px
+    var(--color-on-background);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: calc(var(--shadow-offset) + 2px) calc(var(--shadow-offset) + 2px)
+    0px 0px var(--color-on-background);
+}
+
+/* --- THE ICON BOX --- */
+.project-icon-wrapper {
+  background-color: var(--color-surface-container-high);
+  border: var(--border-width) solid var(--color-on-background);
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* --- THE CATEGORY CHIPS --- */
+.category-chip {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border: calc(var(--border-width) - 1px) solid var(--color-on-background);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Color codes per taxonomy class */
+.category-utility {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-fixed-variant);
+}
+
+.category-tool {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+}
+
+.category-game {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+/* ---TYPOGRAPHY SPACING --- */
+.card-title {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-on-background);
+  margin-bottom: 0.5rem;
+}
+
+.project-desc {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-md-size);
+  color: var(--color-on-surface-variant);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --- THE LAUNCH BUTTON --- */
+.btn-launch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-md-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-primary);
+  border: var(--border-width) solid var(--color-on-background);
+
+  box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-background);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+.btn-launch-utility {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-fixed-variant);
+  box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-secondary-fixed);
+}
+
+.btn-launch-tool {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+  box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-primary-fixed);
+}
+
+.btn-launch-game {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+  box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-tertiary-fixed);
+}
+
+.btn-launch:active {
+  transform: translate(0.25rem, 0.25rem);
+  box-shadow: 0px 0px 0px 0px var(--color-on-background);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 600px) {
+  .container {
+    padding-left: var(--spacing-margin-mobile);
+    padding-right: var(--spacing-margin-mobile);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .container h1 {
+    font-size: var(--font-headline-lg-mobile-size);
+    line-height: var(--font-headline-lg-mobile-line-height);
+    margin-bottom: 1rem;
+  }
+
+  .container p {
+    font-size: var(--font-body-md-size);
+    margin-bottom: 2rem;
+  }
+}
