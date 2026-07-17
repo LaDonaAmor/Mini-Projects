@@ -1,7 +1,7 @@
 <header class="site-header">
     <div class="header-left">
 
-        <!-- Show this on the main hub page -->
+        <!-- main hub page -->
         <a href="/" id="hub-title" class="logo">
             <img src="/public/favicon.ico" alt="Logo" />
             <span>Mini Projects</span>
@@ -16,7 +16,7 @@
 
     <!-- RIGHT ZONE: Actions & Navigation -->
     <div class="header-right">
-        <!-- Show this on the main hub page -->
+        <!-- main hub page -->
         <nav id="hub-nav">
             <a href="/" class="nav-link type-label-md" data-nav="hub">Hub</a>
             <a href="/?filter=games" class="nav-link type-label-md" data-nav="games">Games</a>
@@ -24,7 +24,7 @@
             <a href="/?filter=tools" class="nav-link type-label-md" data-nav="tools">Tools</a>
         </nav>
 
-        <!-- Show this ONLY on project pages -->
+        <!-- ONLY on project pages -->
         <a href="/" id="back-button" class="back-btn hidden type-label-md">
             ← BACK TO HUB
         </a>

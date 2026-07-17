@@ -1,7 +1,8 @@
 // partials/include.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/partials/header.html")
+  // Fetch header.part instead of header.html
+  fetch("/partials/header.part")
     .then((res) => res.text())
     .then((headerHtml) => {
       const headerContainer = document.getElementById("site-header");
@@ -12,10 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch((err) => console.error("Error loading header:", err));
 
-  fetch("/partials/footer.html")
+  // Fetch footer.part instead of footer.html
+  fetch("/partials/footer.part")
     .then((res) => res.text())
     .then((footerHtml) => {
-      const footerContainer = document.getElementById("footer-container"); // Fixed duplicate target ID
+      const footerContainer = document.getElementById("footer-container");
       if (footerContainer) {
         footerContainer.innerHTML = footerHtml;
       }
@@ -36,7 +38,7 @@ function setupHeaderLayout() {
   const backButton = document.getElementById("back-button");
 
   if (projectName) {
-    // We are inside a project page
+    // project page
     if (hubTitle) hubTitle.classList.add("hidden");
     if (hubNav) hubNav.classList.add("hidden");
 
@@ -47,7 +49,7 @@ function setupHeaderLayout() {
     }
     if (backButton) backButton.classList.remove("hidden");
   } else {
-    // We are on the hub page
+    // hub page
     if (hubTitle) hubTitle.classList.remove("hidden");
     if (hubNav) hubNav.classList.remove("hidden");
     if (projectTitle) projectTitle.classList.add("hidden");

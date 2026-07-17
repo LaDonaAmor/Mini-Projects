@@ -1,4 +1,5 @@
 /* --- SITE HEADER --- */
+
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +28,13 @@
   padding: 0.25rem 0;
   font-size: var(--font-label-md-size);
   font-weight: var(--font-label-md-weight);
+}
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .project-title {
@@ -66,7 +74,6 @@
   transition:
     transform 0.1s ease,
     box-shadow 0.1s ease;
-
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px
     var(--color-on-surface);
 }
@@ -83,20 +90,129 @@
 }
 
 /* --- SITE FOOTER --- */
+
 #site-footer {
   width: 100%;
-  border-top: var(--border-width) solid var(--color-on-background);
   background-color: var(--color-surface);
-  padding: 2rem var(--spacing-margin-desktop);
-  margin-top: 4rem;
+  border-top: var(--border-width) solid var(--color-on-background);
+  padding: 3rem var(--spacing-margin-desktop);
+  margin-top: 5rem;
 }
 
-.footer-content {
+/* Inner wrapper to keep the content aligned with the rest of your site container */
+.footer-container-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2.5rem;
+}
+
+/* --- LEFT SIDE: BRANDING --- */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-md-size);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-on-background);
+}
+
+.footer-credits {
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-md-size);
+  color: var(--color-on-surface-variant);
+}
+
+.footer-credits .highlight {
+  font-weight: 700;
+  color: var(--color-on-background);
+}
+
+/* --- RIGHT SIDE: SOCIAL & PORTFOLIO BUTTONS --- */
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links-label {
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  letter-spacing: 0.05em;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  transition: fill 0.1s ease;
+}
+
+/* Interactive mini-button styling */
+.footer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--color-surface-container-lowest);
+  border: var(--border-width) solid var(--color-on-background);
+  box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-background);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background-color 0.1s ease;
+}
+
+/* Neo-brutalist hover states: pushes down and pops color! */
+.footer-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 0.15rem 0.15rem 0px 0px var(--color-on-background);
+}
+
+.footer-btn:active {
+  transform: translate(0.25rem, 0.25rem);
+  box-shadow: 0px 0px 0px 0px var(--color-on-background);
+}
+
+/* Color accents on hover for each social network */
+.footer-btn.btn-portfolio:hover {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+.footer-btn.btn-github:hover {
+  background-color: var(--color-on-background);
+  color: var(--color-surface-container-lowest);
+}
+
+.footer-btn.btn-linkedin:hover {
+  background-color: var(--color-secondary-fixed);
+  color: var(--color-on-secondary-fixed-variant);
+}
+
+.footer-btn.btn-twitter:hover {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
 }
 
 .hidden {
@@ -172,9 +288,7 @@
   transform: translate(2px, 2px);
   box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px)
     0px 0px var(--color-on-background);
-  background-color: var(
-    --color-surface-container-low
-  ); /* Subtle cream/grey tint */
+  background-color: var(--color-surface-container-low);
   border-color: var(--color-primary);
 }
 
@@ -185,6 +299,7 @@
 }
 
 /* CONTAINER */
+
 /* --- THE HOMEPAGE CONTAINER --- */
 .container {
   max-width: 1200px;
@@ -239,7 +354,6 @@
   border: var(--border-width) solid var(--color-on-background);
   padding: 1.5rem;
   position: relative;
-
   box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px
     var(--color-on-background);
   transition:
@@ -316,19 +430,18 @@
 /* --- THE LAUNCH BUTTON --- */
 .btn-launch {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   width: 100%;
   padding: 0.75rem 1rem;
-
   font-family: var(--font-family-label);
   font-size: var(--font-label-md-size);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-on-primary);
   border: var(--border-width) solid var(--color-on-background);
-
   box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-background);
   transition:
     transform 0.1s ease,
@@ -376,5 +489,30 @@
   .container p {
     font-size: var(--font-body-md-size);
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1rem var(--spacing-margin-mobile);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .site-header nav {
+    gap: 0.75rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  #site-footer {
+    padding: 2.5rem var(--spacing-margin-mobile);
+  }
+  .footer-container-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
   }
 }
