@@ -19,8 +19,8 @@
 
   <div class="container">
     <span class="welcome-badge">PIXELS & LOGIC</span>
-    <h1>A fun corner of the web!</h1>
-    <p>
+    <h1 id="page-heading">A fun corner of the web!</h1>
+    <p id="page-description">
       Discover handcrafted mini tools, games, and experiments built with HTML, CSS,
       and JavaScript. No sign-ups, no clutter, just simple, interactive experiences. Pick a project, explore, and have
       fun.
@@ -37,6 +37,32 @@
     <div class="project-grid" id="project-grid-container">
       <!-- JavaScript will inject cards here automatically -->
     </div>
+
+    <section class="request-section-container">
+
+      <div class="request-box">
+        <h2 id="request-heading">Request a Mini Tool</h2>
+        <p id="request-description" class="type-body-md">
+          Missing a specific tiny utility? We're building new projects every week. Let us know what you need.
+        </p>
+
+        <form class="request-form" id="request-form">
+          <input type="text" class="request-input" name="message" placeholder="Your idea..." required />
+          <button type="submit" class="btn-send">Send</button>
+        </form>
+
+      </div>
+
+      <div class="progress-box">
+        <div class="progress-icon">🛠️</div>
+        <div class="progress-counter">0/50</div>
+        <div class="progress-label">Projects Built So Far</div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+    </section>
 
   </div>
   <div id="footer-container"></div>
