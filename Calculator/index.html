@@ -5,14 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculator</title>
+  <link rel="stylesheet" href="../tokens.css" />
+  <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="/partials/header.html" as="fetch" crossorigin>
+  <script src="script.js" defer></script>
+  <script src="../partials/include.js" defer></script>
 </head>
 
-<body>
-  <div id="back-btn">
-    <a href="/index.html" title="Back to Project Hub"><button class="back" type="button"> Back to Project
-        Hub</button></a>
-  </div>
+<body data-nav="utilities" data-project-name="Calculator" data-project-icon="🧮">
+  <div id="site-header"></div>
+
+
 
   <div id="calculator">
     <input type="text" class="display" disabled />
@@ -39,7 +43,7 @@
       <button class="equal">=</button>
     </div>
   </div>
-  <script src="js.js"></script>
+  <div id="footer-container"></div>
 </body>
 
 </html>

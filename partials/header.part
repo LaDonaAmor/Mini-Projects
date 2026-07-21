@@ -1,0 +1,31 @@
+<header class="site-header">
+    <div class="header-left">
+
+        <!-- main hub page -->
+        <a href="/" id="hub-title" class="logo">
+            <img src="/public/favicon.ico" alt="Logo" />
+            <span>Mini Projects</span>
+        </a>
+
+        <!-- Show this ONLY on project pages -->
+        <div id="project-title" class="project-title hidden type-headline-lg">
+            <span id="project-icon-target"></span>
+            <span id="project-name-target"></span>
+        </div>
+    </div>
+
+    <!-- RIGHT ZONE: Actions & Navigation -->
+    <div class="header-right">
+        <!-- main hub page -->
+        <nav id="hub-nav">
+            <a href="/" class="nav-link type-label-md" data-nav="hub">Hub</a>
+            <a href="/?filter=games" class="nav-link type-label-md" data-nav="games">Games</a>
+            <a href="/?filter=utilities" class="nav-link type-label-md" data-nav="utilities">Utilities</a>
+            <a href="/?filter=tools" class="nav-link type-label-md" data-nav="tools">Tools</a>
+        </nav>
+
+        <!-- ONLY on project pages -->
+        <a href="/" id="back-button" class="back-btn hidden type-label-md">
+            ← BACK TO HUB
+        </a>
+    </div>

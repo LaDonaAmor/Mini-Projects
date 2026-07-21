@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fun Mini Projects Hub</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <div class="confetti">
-      <!-- JavaScript adds confetti pieces here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Projects Hub</title>
+
+  <link rel="stylesheet" href="/tokens.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preload" href="/partials/header.part" as="fetch" crossorigin>
+
+  <script src="/partials/include.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body data-nav="hub">
+  <div id="site-header"></div>
+
+  <div class="container">
+    <span class="welcome-badge">PIXELS & LOGIC</span>
+    <h1 id="page-heading">A fun corner of the web!</h1>
+    <p id="page-description">
+      Discover handcrafted mini tools, games, and experiments built with HTML, CSS,
+      and JavaScript. No sign-ups, no clutter, just simple, interactive experiences. Pick a project, explore, and have
+      fun.
+    </p>
+
+    <div class="search-container">
+      <span class="search-label">SEARCH PROJECTS</span>
+      <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="Type to search..." />
+        <span class="search-icon">🔍</span>
+      </div>
     </div>
-    <div class="container">
-      <h1>🎉 Fun Mini Projects Hub 🎉</h1>
-      <p>
-        Welcome to a playful corner of the web! Dive into these simple,
-        interactive mini apps built with HTML, CSS, and JS. Pick one and have
-        some fun!
-      </p>
 
-      <div class="project-grid">
-        <a href="Calculator/index.html" class="project-card">
-          <div class="project-icon">🧮</div>
-          <div class="project-title">Calculator</div>
-          <div class="project-desc">Crunch numbers with ease!</div>
-        </a>
-        <a href="Clock/index.html" class="project-card">
-          <div class="project-icon">🕛</div>
-          <div class="project-title">Clock</div>
-          <div class="project-desc">
-            A stylish, interactive digital clock showing real-time hours,
-            minutes, and seconds.
-          </div>
-        </a>
-        <a href="Timer/index.html" class="project-card">
-          <div class="project-icon">⏱️</div>
-          <div class="project-title">Timer</div>
-          <div class="project-desc">Set countdowns for anything!</div>
-        </a>
-        <a href="ToDo-List/index.html" class="project-card">
-          <div class="project-icon">📝</div>
-          <div class="project-title">To-Do List</div>
-          <div class="project-desc">Organize your tasks playfully.</div>
-        </a>
-        <a href="quote.html" class="project-card">
-          <div class="project-icon">💭</div>
-          <div class="project-title">Quote Generator</div>
-          <div class="project-desc">Get inspired with random quotes.</div>
-        </a>
-        <a href="weather.html" class="project-card">
-          <div class="project-icon">🌤️</div>
-          <div class="project-title">Weather App</div>
-          <div class="project-desc">Check the forecast in style.</div>
-        </a>
-        <a href="Guess the Number Game/index.html" class="project-card">
-          <div class="project-icon">❓</div>
-          <div class="project-title">Guess the Number Game</div>
-          <div class="project-desc">
-            We'll tell you if your guess was too high or too low!
-          </div>
-        </a>
-        <a href="Rock, Paper, Scissors/index.html" class="project-card">
-          <div class="project-icon">✊✋✌️</div>
-          <div class="project-title">Rock, Paper, Scissors Game</div>
-          <div class="project-desc">
-            Challenge the computer in this classic hand game and see if luck is
-            on your side!
-          </div>
-        </a>
+    <div class="project-grid" id="project-grid-container">
+      <!-- JavaScript will inject cards here automatically -->
+    </div>
+
+    <section class="request-section-container">
+
+      <div class="request-box">
+        <h2 id="request-heading">Request a Mini Tool</h2>
+        <p id="request-description" class="type-body-md">
+          Missing a specific tiny utility? We're building new projects every week. Let us know what you need.
+        </p>
+
+        <form class="request-form" id="request-form">
+          <input type="text" class="request-input" name="message" placeholder="Your idea..." required />
+          <button type="submit" class="btn-send">Send</button>
+        </form>
+
       </div>
 
-      <footer>Designed with 💙 by LaDonaAmor - TechNurse!</footer>
-    </div>
-    <script src="js.js"></script>
-  </body>
+      <div class="progress-box">
+        <div class="progress-icon">🛠️</div>
+        <div class="progress-counter">0/50</div>
+        <div class="progress-label">Projects Built So Far</div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div id="footer-container"></div>
+</body>
+
 </html>
