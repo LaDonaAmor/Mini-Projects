@@ -172,7 +172,7 @@
 
 /* --- THE HOMEPAGE CONTAINER --- */
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--spacing-margin-desktop);
@@ -213,9 +213,7 @@
 
 /* --- THE CARD CONTAINER --- */
 .project-card {
-  max-width: 380px;
   width: 100%;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -348,7 +346,7 @@
   grid-template-columns: 2fr 1fr;
   gap: var(--spacing-gutter);
   margin: var(--spacing-margin-desktop) auto;
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 0 var(--spacing-gutter);
 }
 
