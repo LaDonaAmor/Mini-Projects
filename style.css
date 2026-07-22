@@ -1,3 +1,12 @@
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.ready {
+  opacity: 1;
+}
+
 /* --- SITE HEADER --- */
 
 .site-header {

@@ -2,19 +2,20 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Fetch header.part instead of header.html
-  fetch("/partials/header.part")
+  const headerFetch = fetch("/partials/header.part")
     .then((res) => res.text())
     .then((headerHtml) => {
       const headerContainer = document.getElementById("site-header");
       if (headerContainer) {
         headerContainer.innerHTML = headerHtml;
         setupHeaderLayout();
+        injectFavicons(headerContainer);
       }
     })
     .catch((err) => console.error("Error loading header:", err));
 
   // Fetch footer.part instead of footer.html
-  fetch("/partials/footer.part")
+  const footerFetch = fetch("/partials/footer.part")
     .then((res) => res.text())
     .then((footerHtml) => {
       const footerContainer = document.getElementById("footer-container");
@@ -23,7 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
     .catch((err) => console.error("Error loading footer:", err));
+
+  // Wait for BOTH to complete, then fade everything in together
+  Promise.all([headerFetch, footerFetch]).then(() => {
+    document.body.classList.add("ready");
+  });
 });
+
+function injectFavicons(container) {
+  const favicons = container.querySelectorAll("link[rel*='icon']");
+  favicons.forEach((favicon) => {
+    document.head.appendChild(favicon);
+  });
+}
 
 function setupHeaderLayout() {
   const projectName = document.body.dataset.projectName;
