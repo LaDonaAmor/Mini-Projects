@@ -1,15 +1,11 @@
 // Display
 const displayInput = document.querySelector(".display");
-
 // Button Container
 const buttons = document.querySelectorAll(".buttons");
-
 // Operators (+ − × ÷)
 const operatorButtons = document.querySelectorAll(".operator");
-
 // Numbers (0–9)
 const numberButtons = document.querySelectorAll(".numbers");
-
 // Special buttons (CE, C, DEL, =, ., %)
 const clearEntryButton = document.querySelector(".clear_entry");
 const clearButton = document.querySelector(".clear");
@@ -17,66 +13,52 @@ const deleteButton = document.querySelector(".delete");
 const equalButton = document.querySelector(".equal");
 const decimalButton = document.querySelector(".decimal");
 const percentButton = document.querySelector(".percent");
-
 const MAX_DIGITS = 15;
-
 let currentValue = "";
 let storedValue = "";
 let currentOperator = "";
-
 function formatNumber(value) {
   if (value === "Error") return "Error";
   if (value === null || value === undefined || value === "") return "";
-
   if (typeof value === "string") {
     if (value.endsWith(".")) return value;
     if (value.startsWith(".")) return value;
   }
-
   const num = Number(value);
   if (Number.isNaN(num)) return "";
-
   const precisionLimit = MAX_DIGITS + 1;
   let formatted = num.toPrecision(precisionLimit);
   formatted = formatted.replace(/\.?0+$/, "");
-
   if (formatted.length > MAX_DIGITS) {
     return num.toExponential(MAX_DIGITS - 6);
   }
   return formatted;
 }
-
 function updateDisplay() {
   let displayString = "";
-
   if (currentValue) {
     displayString =
       typeof currentValue === "string"
         ? currentValue
         : formatNumber(currentValue);
-
     if (storedValue && currentOperator) {
       displayString =
         formatNumber(storedValue) + "" + currentOperator + "" + displayString;
     }
   } else if (storedValue) {
     displayString = formatNumber(storedValue);
-
     if (currentOperator) {
       displayString += "" + currentOperator;
     }
   }
-
   displayInput.value = displayString;
-
   if (displayInput.value.includes("Error")) {
     displayInput.style.color = "red";
   } else {
-    displayInput.style.color = "white";
+    displayInput.style.color = "";
   }
   displayInput.blur();
 }
-
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (currentValue.length >= MAX_DIGITS) {
@@ -86,7 +68,6 @@ numberButtons.forEach((button) => {
     updateDisplay();
   });
 });
-
 decimalButton.addEventListener("click", () => {
   if (currentValue === "") {
     currentValue = "0.";
@@ -99,7 +80,6 @@ decimalButton.addEventListener("click", () => {
     updateDisplay();
   }
 });
-
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (storedValue === "") {
@@ -113,19 +93,16 @@ operatorButtons.forEach((button) => {
     updateDisplay();
   });
 });
-
 clearEntryButton.addEventListener("click", () => {
   currentValue = "";
   updateDisplay();
 });
-
 clearButton.addEventListener("click", () => {
   currentValue = "";
   storedValue = "";
   currentOperator = "";
   updateDisplay();
 });
-
 deleteButton.addEventListener("click", () => {
   if (currentValue) {
     currentValue = currentValue.slice(0, -1);
@@ -135,7 +112,6 @@ deleteButton.addEventListener("click", () => {
   }
   updateDisplay();
 });
-
 percentButton.addEventListener("click", () => {
   if (!currentValue && storedValue) {
     currentValue = storedValue;
@@ -148,14 +124,11 @@ percentButton.addEventListener("click", () => {
   } else {
     currentValue = storedValue * (currentValue / 100);
   }
-
   updateDisplay();
 });
-
 function calculate() {
   currentValue = Number(currentValue);
   storedValue = Number(storedValue);
-
   let result;
   switch (currentOperator) {
     case "+":
@@ -179,10 +152,8 @@ function calculate() {
   }
   return result;
 }
-
 let lastOperator = "";
 let lastValue = "";
-
 equalButton.addEventListener("click", () => {
   if (currentValue && currentOperator) {
     let result = calculate();
@@ -203,7 +174,6 @@ equalButton.addEventListener("click", () => {
     updateDisplay();
   }
 });
-
 document.addEventListener("keydown", (e) => {
   if (e.key >= "0" && e.key <= "9") {
     currentValue += e.key;
