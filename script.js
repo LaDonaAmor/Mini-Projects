@@ -175,44 +175,47 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCards(e.target.value);
     });
   }
-});
 
-const form = document.getElementById("request-form");
-const input = form.querySelector(".request-input");
-const submitBtn = form.querySelector('[type="submit"]');
+  // Request form handling
+  const form = document.getElementById("request-form");
+  if (!form) return;
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  const input = form.querySelector(".request-input");
+  const submitBtn = form.querySelector('[type="submit"]');
 
-  if (!input.value.trim()) {
-    showToast("Please enter a request first.", "error");
-    return;
-  }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const formData = new FormData(form);
-  formData.append("_replyto", "your-email@example.com");
-  formData.append("_subject", "New Mini Tool Request");
-
-  submitBtn.disabled = true;
-
-  try {
-    const res = await fetch("https://formspree.io/f/xrenkjbz", {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" },
-    });
-
-    if (res.ok) {
-      showToast("Message sent! Thanks for the idea.");
-      form.reset();
-    } else {
-      showToast("Something went wrong. Try again.", "error");
+    if (!input.value.trim()) {
+      showToast("Please enter a request first.", "error");
+      return;
     }
-  } catch {
-    showToast("Something went wrong. Try again.", "error");
-  } finally {
-    submitBtn.disabled = false;
-  }
+
+    const formData = new FormData(form);
+    formData.append("_replyto", "your-email@example.com");
+    formData.append("_subject", "New Mini Tool Request");
+
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch("https://formspree.io/f/xrenkjbz", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        showToast("Message sent! Thanks for the idea.");
+        form.reset();
+      } else {
+        showToast("Something went wrong. Try again.", "error");
+      }
+    } catch {
+      showToast("Something went wrong. Try again.", "error");
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 });
 
 function showToast(message, type = "success") {
