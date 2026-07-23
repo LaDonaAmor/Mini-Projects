@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (headerContainer) {
         headerContainer.innerHTML = headerHtml;
         setupHeaderLayout();
+        if (window.updateThemeIcon) window.updateThemeIcon();
         injectFavicons(headerContainer);
       }
     })

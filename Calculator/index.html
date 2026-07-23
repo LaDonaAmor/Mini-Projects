@@ -5,12 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculator</title>
+  <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme-preference") || "light");</script>
   <link rel="stylesheet" href="../tokens.css" />
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preload" href="/partials/header.html" as="fetch" crossorigin>
   <script src="script.js" defer></script>
   <script src="../partials/include.js" defer></script>
+  <script src="/partials/theme.js"></script>
 </head>
 
 <body data-nav="utilities" data-project-name="Calculator" data-project-icon="🧮">
