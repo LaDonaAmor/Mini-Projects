@@ -1,6 +1,6 @@
 body.construction-active {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100dvh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -194,5 +194,57 @@ body.construction-active {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .construction-overlay {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .construction-icon-card {
+    width: 6rem;
+    height: 4rem;
+  }
+
+  .construction-icons svg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .construction-badge {
+    font-size: 0.45rem;
+  }
+
+  .construction-heading {
+    font-size: 1.5rem;
+  }
+
+  .construction-highlight {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    padding: 0.2rem 0.75rem;
+  }
+
+  .construction-desc {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .construction-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .construction-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .construction-progress {
+    max-width: 100%;
   }
 }
