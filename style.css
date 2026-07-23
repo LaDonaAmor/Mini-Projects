@@ -1,3 +1,34 @@
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.ready {
+  opacity: 1;
+}
+
+/* Smooth theme transitions */
+.site-header,
+.project-card,
+.project-icon-wrapper,
+.category-chip,
+.btn-launch,
+#search-input,
+.request-box,
+.progress-box,
+.progress-bar-track,
+.progress-bar-fill,
+.back-btn,
+.toast,
+.theme-toggle-btn,
+.search-wrapper {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 /* --- SITE HEADER --- */
 
 .site-header {
@@ -35,6 +66,32 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--color-on-background);
+  background-color: var(--color-surface-container-lowest);
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--color-surface-container);
+}
+
+.theme-toggle-btn:active {
+  transform: translate(2px, 2px);
 }
 
 .project-title {
@@ -103,7 +160,7 @@
   transform: rotate(-4deg);
   transform-origin: center;
   transition: transform 0.2s ease;
-  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 0 var(--color-on-background);
 }
 
 /* --- SEARCH SECTION --- */
@@ -163,7 +220,7 @@
 }
 
 #search-input::placeholder {
-  color: var(--color-surface-dim);
+  color: var(--color-outline);
   font-style: italic;
   opacity: 0.8;
 }
@@ -264,7 +321,7 @@
 
 /* Color codes per taxonomy class */
 .category-utility {
-  background-color: var(--color-secondary-container);
+  background-color: var(--color-secondary-fixed);
   color: var(--color-on-secondary-fixed-variant);
 }
 
@@ -317,7 +374,7 @@
 }
 
 .btn-launch-utility {
-  background-color: var(--color-secondary-container);
+  background-color: var(--color-secondary-fixed);
   color: var(--color-on-secondary-fixed-variant);
   box-shadow: 0.25rem 0.25rem 0px 0px var(--color-on-secondary-fixed);
 }
@@ -364,9 +421,7 @@
 
 /* --- LEFT SIDE: REQUEST BOX --- */
 .request-box {
-  background-color: var(
-    --color-surface-container-lowest
-  ); /* Slightly lighter background */
+  background-color: var(--color-surface-container-lowest);
   gap: calc(var(--spacing-unit) * 4);
 }
 
@@ -420,14 +475,20 @@
 /* --- RIGHT SIDE: PROGRESS BOX --- */
 .progress-box {
   background-color: var(--color-secondary-fixed);
+  color: var(--color-on-secondary-fixed-variant);
   align-items: center;
   text-align: center;
   gap: calc(var(--spacing-unit) * 3);
 }
 
+.progress-icon,
+.progress-counter,
+.progress-label {
+  color: var(--color-on-secondary-fixed-variant);
+}
+
 .progress-icon {
   font-size: 2rem;
-  color: var(--color-on-background);
 }
 
 .progress-counter {

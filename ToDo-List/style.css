@@ -1,4 +1,4 @@
-body {
+/* body {
   background: rgb(0, 0, 0);
   background: radial-gradient(
     circle,
@@ -143,7 +143,6 @@ li {
   border: 1px solid gray;
 }
 
-/* Add styles for draggable tasks */
 li[draggable="true"] {
   cursor: move;
 }
@@ -152,12 +151,11 @@ li[draggable="true"]:active {
   cursor: move;
 }
 
-/* Highlight the drop target */
 li.drag-over {
   border: 2px dashed #000;
 }
 
-/* Responsiveness */
+Responsiveness
 
 @media (min-width: 280px) and (max-width: 500px) {
   #todo-container {
@@ -168,3 +166,4 @@ li.drag-over {
     margin-top: 5px;
   }
 }
+ */

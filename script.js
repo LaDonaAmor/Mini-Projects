@@ -50,7 +50,7 @@ const projects = [
   },
   {
     title: "R-P-S",
-    desc: "Challenge the computer in a classic hand game.",
+    desc: "Challenge the computer in a classic hand game of Rock, Paper, Scissors.",
     icon: "✊✋✌️",
     category: "games",
     url: "/rock-paper-scissors/index.html",

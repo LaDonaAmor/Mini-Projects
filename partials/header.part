@@ -1,3 +1,8 @@
+<link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png" />
+
 <header class="site-header">
     <div class="header-left">
 
@@ -16,6 +21,7 @@
 
     <!-- RIGHT ZONE: Actions & Navigation -->
     <div class="header-right">
+            
         <!-- main hub page -->
         <nav id="hub-nav">
             <a href="/" class="nav-link type-label-md" data-nav="hub">Hub</a>
@@ -23,6 +29,9 @@
             <a href="/?filter=utilities" class="nav-link type-label-md" data-nav="utilities">Utilities</a>
             <a href="/?filter=tools" class="nav-link type-label-md" data-nav="tools">Tools</a>
         </nav>
+        <button id="theme-toggle" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span id="theme-icon">☀️</span>
+            </button>
 
         <!-- ONLY on project pages -->
         <a href="/" id="back-button" class="back-btn hidden type-label-md">

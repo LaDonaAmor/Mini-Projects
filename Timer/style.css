@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -202,3 +202,4 @@ h2 {
 .control-btn:active {
   transform: scale(0.95);
 }
+ */

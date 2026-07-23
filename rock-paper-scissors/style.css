@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,14 +53,12 @@ body {
   gap: 2rem;
 }
 
-/* TITLE */
 .game-title {
   text-align: left;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
-/* MAIN GAME AREA */
 .game-area {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -83,7 +81,6 @@ body {
   font-weight: bold;
 }
 
-/* BUTTONS */
 .choice {
   width: 5rem;
   height: 5rem;
@@ -132,3 +129,4 @@ button.actions {
   font-weight: bold;
   cursor: pointer;
 }
+ */

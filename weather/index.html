@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock</title>
+    <title>Weather App</title>
     <script>document.documentElement.setAttribute("data-theme", localStorage.getItem("theme-preference") || "light");</script>
     <link rel="stylesheet" href="../tokens.css" />
     <link rel="stylesheet" href="../style.css" />
@@ -14,38 +14,19 @@
     <script src="../partials/include.js" defer></script>
     <script src="../partials/construction.js" defer></script>
     <script src="/partials/theme.js"></script>
-
-
 </head>
 
-<body data-nav="utilities" data-project-name="Clock" data-project-icon="🕛" data-status="construction"
-    data-progress="65">
+<body data-nav="utilities" data-project-name="Weather App" data-project-icon="🌤️" data-status="construction"
+    data-progress="15">
 
     <div id="site-header"></div>
-    <main class="clock-app">
+    <main>
 
-        <section class="clock-card">
-
-
-
-            <!--Analog Info-->
-            <div class="clock">
-                <div class="markers"></div>
-                <div id="hour" class="needle hour"></div>
-                <div id="minute" class="needle minute"></div>
-                <div id="second" class="needle second"></div>
-                <div class="center-dot"></div>
-            </div>
-
-            <!--Digital Info-->
-            <div class="info">
-                <p id="current-time" class="time"></p>
-                <p id="current-date" class="date"></p>
-            </div>
-        </section>
+        <p>This is an incoming tool</p>
+        <script src="script.js"></script>
     </main>
-
     <div id="footer-container"></div>
+
 </body>
 
 </html>
