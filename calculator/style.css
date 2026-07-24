@@ -54,6 +54,39 @@
   caret-color: transparent;
 }
 
+.display-wrap {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.display-history {
+  min-height: 1.4rem;
+  padding: 0 0.25rem;
+  text-align: right;
+  font-family: var(--font-family-label);
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* IE & Edge Legacy */
+  -ms-overflow-style: none;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge (Chromium), Opera */
+.display-history::-webkit-scrollbar {
+  display: none;
+}
+
+.display {
+  margin-bottom: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 /* --- Button grid --- */
 
 .buttons {

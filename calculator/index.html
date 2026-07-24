@@ -21,7 +21,10 @@
   <main class="calculator-app">
 
     <div id="calculator">
-      <input type="text" class="display" disabled />
+      <div class="display-wrap">
+        <div class="display-history" id="displayHistory" aria-hidden="true"></div>
+        <input type="text" class="display" id="displayCurrent" disabled />
+      </div>
       <div class="buttons">
         <button class="clear_entry">CE</button>
         <button class="clear">C</button>
@@ -53,6 +56,7 @@
         functionality with a bold neo-brutalist visual style.
       </p>
     </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   </main>
 
