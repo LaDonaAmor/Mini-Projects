@@ -579,7 +579,7 @@ body.ready {
   background-color: var(--color-surface);
   border-top: var(--border-width) solid var(--color-on-background);
   padding: 3rem var(--spacing-margin-desktop);
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 /* Inner wrapper to keep the content aligned with the rest of your site container */

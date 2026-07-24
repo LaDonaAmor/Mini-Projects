@@ -1,0 +1,233 @@
+/* -- Built on tokens.css custom properties -- */
+
+.calculator-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 var(--spacing-margin-mobile);
+}
+
+#calculator {
+  max-width: 30rem;
+  width: 100%;
+  margin: 3rem auto;
+  padding: 1.75rem;
+  position: relative;
+  background-color: var(--color-surface-container);
+  border: var(--border-width) solid var(--color-on-surface);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0
+    var(--color-on-surface);
+}
+
+#calculator::before {
+  content: "KEYPAD";
+  position: absolute;
+  top: -0.9rem;
+  right: -0.6rem;
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  font-family: var(--font-family-label);
+  font-size: var(--font-label-sm-size);
+  font-weight: var(--font-label-md-weight);
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.6rem;
+  border: var(--border-width) solid var(--color-on-surface);
+  transform: rotate(3deg);
+}
+
+/* --- Display --- */
+
+.display {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  min-height: 5rem;
+  border: var(--border-width) solid var(--color-on-surface);
+  background-color: var(--color-surface-container-lowest);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  text-align: right;
+  font-family: var(--font-family-label);
+  font-size: 2.5rem;
+  font-weight: var(--font-label-md-weight);
+  color: var(--color-on-surface);
+  caret-color: transparent;
+}
+
+.display-wrap {
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.display-history {
+  min-height: 1.4rem;
+  padding: 0 0.25rem;
+  text-align: right;
+  font-family: var(--font-family-label);
+  font-size: 1rem;
+  color: var(--color-on-surface-variant);
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* IE & Edge Legacy */
+  -ms-overflow-style: none;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge (Chromium), Opera */
+.display-history::-webkit-scrollbar {
+  display: none;
+}
+
+.display {
+  margin-bottom: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* --- Button grid --- */
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.clear_entry,
+.clear,
+.delete,
+.decimal,
+.percent,
+.operator,
+.equal,
+.numbers {
+  width: 100%;
+  padding: 0.85rem;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--color-on-surface);
+  background-color: var(--color-surface-bright);
+  color: var(--color-on-surface);
+  font-family: var(--font-family-label);
+  font-size: 1rem;
+  font-weight: var(--font-label-md-weight);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0
+    var(--color-on-surface);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.2s ease;
+}
+
+/* Number pad */
+.numbers,
+.decimal {
+  background-color: var(--color-surface-bright);
+  color: var(--color-on-surface);
+}
+
+/* Operators (÷ × - +) */
+.operator {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+/* CE / DEL */
+.clear_entry,
+.delete,
+.percent {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+/* Full clear */
+.clear {
+  background-color: var(--color-error);
+  color: var(--color-on-error);
+}
+
+/* Equals */
+.equal {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  aspect-ratio: auto;
+}
+
+/* Active tactile feedback */
+.clear_entry:active,
+.clear:active,
+.delete:active,
+.decimal:active,
+.percent:active,
+.operator:active,
+.equal:active,
+.numbers:active {
+  transform: translate(var(--shadow-offset), var(--shadow-offset));
+  box-shadow: 0 0 0 0 var(--color-on-surface);
+}
+
+.display:focus,
+.clear_entry:focus-visible,
+.clear:focus-visible,
+.delete:focus-visible,
+.decimal:focus-visible,
+.percent:focus-visible,
+.operator:focus-visible,
+.equal:focus-visible,
+.numbers:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+#info {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 0 3rem;
+  padding: 1.5rem;
+  background-color: var(--color-surface-container-lowest);
+  border: var(--border-width) solid var(--color-on-surface);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0
+    var(--color-on-surface);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#info p {
+  margin-top: 0.75rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-on-surface-variant);
+}
+
+/* --- Responsiveness --- */
+
+@media (max-width: 600px) {
+  #calculator {
+    margin: 1.5rem auto;
+    padding: 1.25rem;
+  }
+
+  .display {
+    font-size: 1.85rem;
+    min-height: 4rem;
+  }
+
+  .clear_entry,
+  .clear,
+  .delete,
+  .decimal,
+  .percent,
+  .operator,
+  .equal,
+  .numbers {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
